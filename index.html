@@ -116,7 +116,7 @@
             serviceWorker.addEventListener("statechange", () => {
               if (serviceWorker.state == "activated") {
                 console.log("Installed new service worker.");
-                loadMainDartJs();
+                loadCharacterSheetJs();
               }
             });
           }
@@ -133,7 +133,7 @@
           } else {
             // Existing service worker is still good.
             console.log("Loading app from service worker.");
-            loadMainDartJs();
+            loadCharacterSheetJs();
           }
         });
 
@@ -144,13 +144,13 @@
             console.warn(
               "Failed to load app from service worker. Falling back to plain <script> tag."
             );
-            loadMainDartJs();
+            loadCharacterSheetJs();
           }
         }, 4000);
       });
     } else {
       // Service workers not supported. Just drop the <script> tag.
-      loadMainDartJs();
+      loadCharacterSheetJs();
     }
   </script>
   <!-- <h2>How To Create A Loader</h2>
